@@ -1,0 +1,116 @@
+<div class="hero common-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+					<h1 style="font-size: 100px;">All Movie 🎥</h1>
+					<ul class="breadcumb">
+						<li class="active"><a href="#">Home</a></li>
+						<li> <span class="ion-ios-arrow-right"></span> movie</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="page-single">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<!-- <div class="topbar-filter fw">
+					<p><span>Movies</span></p> -->
+				<!-- <label>Sort by Catagory:</label>
+					<select>
+						
+						<option value="popularity">Popularity Descending</option>
+						<option value="popularity">Popularity Ascending</option>
+						<option value="rating">Rating Descending</option>
+						<option value="rating">Rating Ascending</option>
+						<option value="date">Release date Descending</option>
+						<option value="date">Release date Ascending</option>
+					</select> -->
+				<!-- <a href="movielist.html" class="list"><i class="ion-ios-list-outline "></i></a>
+					<a  href="moviegridfw.html" class="grid"><i class="ion-grid active"></i></a> -->
+				<!-- </div> -->
+				<div class="flex-wrap-movielist mv-grid-fw">
+					<div class="row">
+						<div class="column" *ngFor="let movie of popularmovie?.results; let i =index">
+							<div style="height: 300px;width:180px" class="movie-item-style-2 movie-item-style-1">
+								<img style="height: 200px;" src="{{movie.backdrop_path}}" alt="">
+								<form (click)="getid(movie.id)" >
+									<div class="hvr-inner">
+										<a class="submit" type="submit" name="id" > Read more <i class="ion-android-arrow-dropright"></i> </a>
+									</div>
+								</form>
+								<div class="mv-item-infor">
+									<h6><a href="#">{{movie.title}}</a></h6>
+									<p class="rate"><i class="ion-android-star"></i><span>{{movie.vote_average}}</span>
+										/10</p>
+								</div>
+							</div>
+						</div>
+						<div class="column" *ngFor="let movie of nowplayingmovies?.results; let i =index">
+							<div style="height: 300px;width:180px" class="movie-item-style-2 movie-item-style-1">
+								<img style="height: 200px;" src="{{movie.backdrop_path}}" alt="">
+								<div class="hvr-inner">
+									<a (click)="getid(movie.id)" > Read more <i class="ion-android-arrow-dropright"></i>
+									</a>
+								</div>
+								<div class="mv-item-infor">
+									<h6><a href="#">{{movie.title}}</a></h6>
+									<p class="rate"><i class="ion-android-star"></i><span>{{movie.vote_average}}</span>
+										/10</p>
+								</div>
+							</div>
+						</div>
+						<div class="column" *ngFor="let movie of topratedmovie?.results; let i =index">
+							<div style="height: 300px;width:180px" class="movie-item-style-2 movie-item-style-1">
+								<img style="height: 200px;" src="{{movie.backdrop_path}}" alt="">
+								<div class="hvr-inner">
+									<a (click)="getid(movie.id)"> Read more <i class="ion-android-arrow-dropright"></i>
+									</a>
+								</div>
+								<div class="mv-item-infor">
+									<h6><a href="#">{{movie.title}}</a></h6>
+									<p class="rate"><i class="ion-android-star"></i><span>{{movie.vote_average}}</span>
+										/10</p>
+								</div>
+							</div>
+						</div>
+						<div class="column" *ngFor="let movie of upcomingmovie?.results; let i =index">
+							<div style="height: 300px;width:180px" class="movie-item-style-2 movie-item-style-1">
+								<img style="height: 200px;" src="{{movie.backdrop_path}}" alt="">
+								<div class="hvr-inner">
+									<a (click)="getid(movie.id)"> Read more <i class="ion-android-arrow-dropright"></i>
+									</a>
+								</div>
+								<div class="mv-item-infor">
+									<h6><a href="#">{{movie.title}}</a></h6>
+									<p class="rate"><i class="ion-android-star"></i><span>{{movie.vote_average}}</span>
+										/10</p>
+								</div>
+							</div>
+						</div>
+						<div class="column" *ngFor="let movie of trendingmovie?.results; let i =index">
+							<div style="height: 300px;width:180px" class="movie-item-style-2 movie-item-style-1">
+								<img style="height: 200px;" src="{{movie.backdrop_path}}" alt="">
+								<div class="hvr-inner">
+									<a (click)="getid(movie.id)"> Read more <i class="ion-android-arrow-dropright"></i>
+									</a>
+								</div>
+								<div class="mv-item-infor">
+									<h6><a href="#">{{movie.title}}</a></h6>
+									<p class="rate"><i class="ion-android-star"></i><span>{{movie.vote_average}}</span>
+										/10</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

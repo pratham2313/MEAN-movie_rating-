@@ -1,0 +1,66 @@
+<div *ngIf="auth.user$ | async as user">
+<div class="hero user-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+					<h1>Welcome: {{user.name}}</h1>
+					<!-- <ul class="breadcumb">
+						<li class="active"><a href="#">Home</a></li>
+						<li> <span class="ion-ios-arrow-right"></span>Profile</li>
+					</ul> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="page-single">
+	<div class="container">
+		<div class="row ipad-width">
+			<div class="col-md-3 col-sm-12 col-xs-12">
+				<div class="user-information">
+					<div class="user-img">
+						<a href="#"><img src="{{user.picture}}" alt=""><br></a>
+						<!-- <a href="#" class="redbtn">Change avatar</a> -->
+					</div>
+					<div class="user-fav">
+						<p>Account Details</p>
+						<ul>
+							<li  class="active"><a routerLink="/profile">Profile</a></li>
+							<!-- <li><a href="userfavoritelist.html">Favorite movies</a></li> -->
+							<li><a routerLink="/userrate" >Rated movies</a></li>
+						</ul>
+					</div>
+					<!-- <div class="user-fav">
+						<p>Others</p>
+						<ul>
+							<li><a href="#">Change password</a></li>
+							<li><a href="#">Log out</a></li>
+						</ul>
+					</div> -->
+				</div>
+			</div>
+			<div class="col-md-9 col-sm-12 col-xs-12">
+				<div class="form-style-1 user-pro" action="#">
+					<form action="#" class="user">
+						<h4>01. Profile details</h4>
+						<div class="row">
+							<div class="col-md-6 form-it">
+								<label>Username: {{user.nickname}}</label>
+								
+							</div>
+							<div class="col-md-6 form-it">
+								<label>Email Address: {{user.email}}</label>
+								
+							</div>
+						</div>
+						
+						
+					</form>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

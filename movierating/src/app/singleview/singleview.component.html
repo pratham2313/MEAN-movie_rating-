@@ -1,0 +1,137 @@
+<div style="padding: 2px" class="hero mv-single-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- <h1> movie listing - list</h1>
+				<ul class="breadcumb">
+					<li class="active"><a href="#">Home</a></li>
+					<li> <span class="ion-ios-arrow-right"></span> movie listing</li>
+				</ul> -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="page-single movie-single movie_single">
+	<div class="container">
+		<div class="row ipad-width2">
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="movie-img ">
+					<img style="height: 400px; width:400px" src="{{'https://image.tmdb.org/t/p/original'+searchmovie.backdrop_path+'?api_key='+key1}}" alt="">
+					<div class="movie-btn">	
+						<div class="btn-transform transform-vertical red">
+							<div><a href="https://www.youtube.com/embed/{{videokey}}" class="item item-1 redbtn fancybox-media hvr-grow"> <i class="ion-play"></i> Watch Trailer</a></div>
+							<div><a href="https://www.youtube.com/embed/{{videokey}}" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
+						</div>
+						
+						<div class="btn-transform transform-vertical">
+							<div><a  class="item item-1 yellowbtn"> <i class="ion-android-star"></i> Rate This Movie</a></div>
+							<div><a (click)="passrateid(searchmovie.id)"   class="item item-2 yellowbtn"><i  style="color:red;font-size: 15px;" class="ion-android-home"></i></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				<div class="movie-single-ct main-content">
+					<h1 class="bd-hd">{{searchmovie.title}}&nbsp;<br><span style="color: rgb(173, 172, 172)" >{{searchmovie.tagline}}</span></h1>
+					<!-- <div class="social-btn">
+						<a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>
+						<div class="hover-bnt">
+							<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>share</a>
+							<div class="hvr-item">
+								<a href="#" class="hvr-grow"><i class="ion-social-facebook"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-twitter"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-googleplus"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-youtube"></i></a>
+							</div>
+						</div>		
+					</div>
+					 -->
+					<div class="movie-tabs">
+						<div class="tabs">
+							<h4 style="color:rgb(255, 255, 255);" class="sb-title">Movie Info:</h4><br>
+						<form  class="form-style-1" action="#">
+							<div class="row">
+								<div class="col-md-12 form-it">
+									<label style="font-size: 20px">Movie name:</label>
+									<input style="font-size: 20px;" type="text" id="mname"   value="{{searchmovie.title}}">
+									
+								</div>
+                                <div class="col-md-12 form-it">
+									<label style="font-size: 20px">Release date:</label>
+									<input style="font-size: 20px;" type="text" id="mname"   value="{{searchmovie.release_date}}">
+									
+								</div>
+                                <div class="col-md-12 form-it">
+									<label style="font-size: 20px">Language:</label>
+									<input style="font-size: 20px;" type="text" id="mname"  value="{{searchmovie.spoken_languages[0].name}}">
+									
+								</div>
+                                <div class="col-md-12 form-it">
+                                    <label style="font-size: 20px">Overview:</label>
+									<p>{{searchmovie.overview}}</p>
+									<p style="font-size: px;font-weight: bold;" ><label style="font-size: 20px">Status: </label> <span> {{searchmovie.status}} &emsp;</span><label style="font-size: 20px"><span style='font-size:40px;'> &#8234; </span>Runtime:</label>  <span>{{searchmovie.runtime}}min</span></p>
+									<p style="font-size: px;font-weight: bold;" ><label style="font-size: 20px">Popularity: </label> <span> {{searchmovie.popularity}} &emsp;</span><label style="font-size: 20px"><span style='font-size:40px;'> &#8234; </span>Budget:</label>  <span>{{searchmovie.budget}}</span></p>
+									<label style="font-size: 20px">Production_companies: </label> 
+									<p *ngFor="let production of searchmovie.production_companies; let i =index ">    &emsp;         - {{production.name}}  </p>
+								</div>
+								
+								<!-- <fieldset class="rate">
+									
+								</fieldset> -->
+								<div ng-app="">
+								
+								<div class="col-md-12 form-it">
+									<div class="movie-rate">
+										
+										<div class="rate">
+                                            <p style="font-size: 15px">Current Rating: </p>
+                                            <!-- <ngx-star-rating formControlName="rating" [id]="'rating'">
+                                            </ngx-star-rating> -->
+                                            <!-- <div>Rating: </div> -->
+                                            <!-- <p>form is valid: {{ form.valid ? 'true' : 'false' }}</p> -->
+                                        </div>
+                                        <div class="rate-star">
+                                            <i style="color:yellow" class="ion-android-star"></i>&nbsp;
+                                            <p><span>{{searchmovie.vote_average}}</span> /10<br>
+                                                <!-- <span class="rv">56 Reviews</span> -->
+                                            </p>
+                                        </div>
+									</div>
+								</div>
+								</div>
+								<p></p>
+								<!-- <div class="col-md-12 form-it">
+									<label>Release Year</label>
+									<div class="row">
+										<div class="col-md-6">
+											<select>
+												<option value="range">From</option>
+												<option value="number">10</option>
+												<option value="number">20</option>
+												<option value="number">30</option>
+											</select>
+										</div>
+										<div class="col-md-6">
+											<select>
+												<option value="range">To</option>
+												<option value="number">20</option>
+												<option value="number">30</option>
+												<option value="number">40</option>
+											</select>
+										</div>
+									</div>
+								</div> -->
+								<div class="col-md-12 ">
+									<button routerLink="" class="button">Home</button>
+									<button routerLink="/movie" class="button button2">Return to Movie</button>
+								</div>
+							</div>
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

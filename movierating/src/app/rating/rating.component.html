@@ -1,0 +1,120 @@
+<div style="padding: 2px" class="hero mv-single-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<!-- <h1> movie listing - list</h1>
+				<ul class="breadcumb">
+					<li class="active"><a href="#">Home</a></li>
+					<li> <span class="ion-ios-arrow-right"></span> movie listing</li>
+				</ul> -->
+			</div>
+		</div>
+	</div>
+</div>
+<div class="page-single movie-single movie_single">
+	<div class="container">
+		<div class="row ipad-width2">
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="movie-img ">
+					<img style="height: 400px; width:400px" src="{{'https://image.tmdb.org/t/p/original'+searchmovie.backdrop_path+'?api_key='+key1}}" alt="">
+					<div class="movie-btn">	
+						<div class="btn-transform transform-vertical red">
+							<div><a href="#" class="item item-1 redbtn"> <i class="ion-play"></i> Watch Trailer</a></div>
+							<div><a href="https://www.youtube.com/embed/{{videokey}}" class="item item-2 redbtn fancybox-media hvr-grow"><i class="ion-play"></i></a></div>
+						</div>
+						<div class="btn-transform transform-vertical">
+							<div><a href="#" class="item item-1 yellowbtn"> <i class="ion-home"></i>Home</a></div>
+							<div><a href="#" class="item item-2 yellowbtn"><i class="ion-home"></i></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				<div class="movie-single-ct main-content">
+					<h1 class="bd-hd">Movie: {{searchmovie.title}}&nbsp;<br><span style="color: rgb(173, 172, 172)" ></span></h1>
+					<div class="social-btn">
+						<!-- <a href="#" class="parent-btn"><i class="ion-heart"></i> Add to Favorite</a>
+						<div class="hover-bnt">
+							<a href="#" class="parent-btn"><i class="ion-android-share-alt"></i>share</a>
+							<div class="hvr-item">
+								<a href="#" class="hvr-grow"><i class="ion-social-facebook"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-twitter"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-googleplus"></i></a>
+								<a href="#" class="hvr-grow"><i class="ion-social-youtube"></i></a>
+							</div>
+						</div>		 -->
+					</div>
+					
+					
+					<div class="movie-tabs">
+						<div class="tabs">
+							<h4 style="color:rgb(255, 255, 255);" class="sb-title">Rate This Movie Here</h4><br>
+						<form (ngSubmit)="onsubmit()" [formGroup]="form" class="form-style-1" action="#">
+							<div class="row">
+								<div class="col-md-12 form-it">
+									<label style="font-size: 20px">Movie name:</label>
+									<input style="font-size: 20px" type="text" id="mname"  value="{{searchmovie.title}}">
+									<span>{{form.value.moviename}}</span>
+								</div>
+								<div class="col-md-12 form-it">
+									<label style="font-size: 20px">Current Rating:</label><br>
+									<i style="color:yellow;font-size: 30px;" class="ion-android-star">&nbsp;</i><span style="color: white;font-size:20px" >{{searchmovie.vote_average}} /10</span>
+									
+								</div>
+								
+								<div class="col-md-12 form-it"><br>
+									<div >
+										<label style="font-size: 20px">Your Rate:</label>
+										
+									</div><br>
+									<!-- <label>Genres & Subgenres</label> -->
+									<div class="group-ip rate">
+										<input type="radio" id="rating10" name="rating" formControlName="rating" value="10" /><label for="rating10" ></label>
+									<input type="radio" id="rating9" name="rating" formControlName="rating" value="9" /><label class="half" for="rating9" ></label>
+									<input type="radio" id="rating8" name="rating" formControlName="rating" value="8" /><label for="rating8" ></label>
+									<input type="radio" id="rating7" name="rating" formControlName="rating" value="7" /><label class="half" for="rating7" ></label>
+									<input type="radio" id="rating6" name="rating" formControlName="rating" value="6" /><label for="rating6" ></label>
+									<input type="radio" id="rating5" name="rating" formControlName="rating" value="5" /><label class="half" for="rating5" ></label>
+									<input type="radio" id="rating4" name="rating" formControlName="rating" value="4" /><label for="rating4" ></label>
+									<input type="radio" id="rating3" name="rating" formControlName="rating" value="3" /><label class="half" for="rating3" ></label>
+									<input type="radio" id="rating2" name="rating" formControlName="rating" value="2" /><label for="rating2" ></label>
+									<input type="radio" id="rating1" name="rating" formControlName="rating" value="1" /><label class="half" for="rating1" ></label>
+									<input type="radio" id="rating0" name="rating0" formControlName="rating" value="0" /><label for="rating0" title="0 Star"></label>
+									</div>
+									
+								</div>
+								<!-- <fieldset class="rate">
+									
+								</fieldset> -->
+								<div ng-app="">
+								
+								<div class="col-md-12 form-it">
+									<div class="movie-rate">
+										
+										<div class="rate">
+                                            <p style="font-size: 15px">Your Rating: </p>
+                                            
+                                        </div>
+                                        <div class="rate-star">
+                                            <i style="color:yellow" class="ion-android-star"></i>&nbsp;
+                                            <p><span>{{form.value.rating}}</span> /10<br>
+                                                
+                                            </p>
+                                        </div>
+									</div>
+									
+								</div>
+								<div class="col-md-12 ">
+									<button (click)="passdata(searchmovie.id,searchmovie.title,searchmovie.backdrop_path)" class="button">Rate</button>
+								</div>
+							</div>
+								
+							</div>
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

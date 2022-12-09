@@ -1,0 +1,289 @@
+
+<div class="slider sliderv2">
+	<div class="container">
+		<div class="row">
+			<div class="slider-single-item">
+				<div class="movie-item">
+					<div class="row">
+						<div class="col-md-8 col-sm-12 col-xs-12">
+							<div  class="title-in">
+								<!-- <div class="cate">
+			    					<span class="blue"><a href="#">Sci-fi</a></span>
+			    					<span class="yell"><a href="#">Action</a></span>
+			    					<span class="orange"><a href="#">advanture</a></span>
+			    				</div> -->
+								<h1><a href="#">{{nowplayingmovies.results[0].title}}<br>
+										<span>Release: {{nowplayingmovies.results[0].release_date}}</span></a></h1><br>
+								<div class="social-btn">
+									<button (click)="playvideo(nowplayingmovies.results[0].id)" style="color: red; border: radius 20px;" class="btn"><i class="ion-play"></i> Watch Trailer</button>
+									&nbsp;<a style="color: red;" *ngIf="playbool" href="https://www.youtube.com/embed/{{videokey}}" class="fancybox-media hvr-grow">&nbsp;<i class="ion-play"></i>Click here</a>
+								
+								</div>
+								<div class="mv-details">
+									<p><i class="ion-android-star"></i><span>{{nowplayingmovies.results[0].vote_average}}</span> /10</p>
+									<ul class="mv-infor">
+										<li> Language: {{nowplayingmovies.results[0].original_language}} </li>
+										<li> Popularity: {{nowplayingmovies.results[0].popularity}} </li>
+										
+									</ul>
+								</div>
+								<div class="btn-transform transform-vertical">
+									<div><a (click)="getid(nowplayingmovies.results[0].id)" class="item item-1 redbtn">more detail</a></div>
+									<div><a (click)="getid(nowplayingmovies.results[0].id)" class="item item-2 redbtn hvrbtn">more detail</a></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-12 col-xs-12">
+							<div class="mv-img-2">
+								<img style="height: 300px;width:400px;" src="{{nowplayingmovies.results[0].backdrop_path}}" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="movie-item">
+					<div class="row">
+						<div class="col-md-8 col-sm-12 col-xs-12"  >
+							<div  class="title-in">
+								<!-- <div class="cate">
+			    					<span class="blue"><a href="#">Sci-fi</a></span>
+			    					<span class="yell"><a href="#">Action</a></span>
+			    					<span class="orange"><a href="#">advanture</a></span>
+			    				</div> -->
+								<h1><a href="#">{{nowplayingmovies.results[1].title}}<br>
+									<span>Release: {{nowplayingmovies.results[1].release_date}}</span></a></h1><br>
+								<div class="social-btn">
+									<button (click)="playvideo(nowplayingmovies.results[1].id)" style="color: red; border: radius 20px;" class="btn"><i class="ion-play"></i> Watch Trailer</button>
+									&nbsp;<a style="color: red;" *ngIf="playbool" href="https://www.youtube.com/embed/{{videokey}}" class="fancybox-media hvr-grow">&nbsp;<i class="ion-play"></i>Click here</a>
+								</div>
+								<div class="mv-details">
+									<p><i class="ion-android-star"></i><span>{{nowplayingmovies.results[1].vote_average}}</span> /10</p><br>
+									<ul class="mv-infor">
+										<li> Language: {{nowplayingmovies.results[1].original_language}} </li>
+										<li> Popularity: {{nowplayingmovies.results[1].popularity}}  </li>
+										<!-- <li> Release: 1 May 2015</li> -->
+									</ul>
+								</div>
+								<div class="btn-transform transform-vertical">
+									<div><a (click)="getid(nowplayingmovies.results[1].id)" class="item item-1 redbtn">more detail</a></div>
+									<div><a (click)="getid(nowplayingmovies.results[1].id)" class="item item-2 redbtn hvrbtn">more detail</a></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-12 col-xs-12">
+							<div class="mv-img-2">
+								<img style="height: 300px;width:400px;" src="{{nowplayingmovies.results[1].backdrop_path}}" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="movie-item">
+					<div class="row">
+						<div class="col-md-8 col-sm-12 col-xs-12">
+							<div class="title-in">
+								<!-- <div class="cate">
+									<span class="blue"><a href="#">Sci-fi</a></span>
+									<span class="yell"><a href="#">Action</a></span>
+									<span class="orange"><a href="#">advanture</a></span>
+								</div> -->
+								<h1><a href="#">{{nowplayingmovies.results[2].title}}<br>
+										<span>Release: {{nowplayingmovies.results[2].release_date}}</span></a></h1><br>
+								<div class="social-btn">
+									<!-- <a href="#" class="parent-btn"><i class="ion-play"></i> Watch Trailer</a> -->
+									<button (click)="playvideo(nowplayingmovies.results[2].id)" style="color: red; border: radius 20px;" class="btn"><i class="ion-play"></i> Watch Trailer</button>
+									&nbsp;<a style="color: red;" *ngIf="playbool" href="https://www.youtube.com/embed/{{videokey}}" class="fancybox-media hvr-grow">&nbsp;<i class="ion-play"></i>Click here</a>
+								</div>
+								<div class="mv-details">
+									<p><i class="ion-android-star"></i><span>{{nowplayingmovies.results[2].vote_average}}</span> /10</p>
+									<ul class="mv-infor">
+										<li> Language: {{nowplayingmovies.results[2].original_language}} </li>
+										<li> Popularity: {{nowplayingmovies.results[2].popularity}} </li>
+										<!-- <li> Release: 1 May 2015</li> -->
+									</ul>
+								</div>
+								<div class="btn-transform transform-vertical">
+									<div><a (click)="getid(nowplayingmovies.results[2].id)" class="item item-1 redbtn">more detail</a></div>
+									<div><a (click)="getid(nowplayingmovies.results[2].id)" class="item item-2 redbtn hvrbtn">more detail</a></div>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-md-4 col-sm-12 col-xs-12">
+							<div class="mv-img-2">
+								<img style="height: 300px;width:400px;" src="{{nowplayingmovies.results[2].backdrop_path}}" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="movie-items  full-width">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="title-hd">
+				<h2>MOVIE</h2>
+				<!-- <a href="./moviegrid.html" class="viewall">View all <i class="ion-ios-arrow-right"></i></a> -->
+			</div>
+			<div class="tabs">
+				<ul class="tab-links">
+					<li class="active"><a href="#tab1-h2">#Popular</a></li>
+					<li><a href="#tab2-h2"> #Coming soon</a></li>
+					<li><a href="#tab3-h2"> #Top rated </a></li>
+					<li><a href="#tab4-h2"> #Most reviewed</a></li>
+				</ul>
+				<div class="tab-content">
+					<div id="tab1-h2" class="tab active">
+						<div class="containera">
+
+							<div class="rowa row-cols-1 row-cols-sm-2 row-cols-md-3 ga-3">
+								<div style="padding-top: 20px;" class="col"
+									*ngFor="let movie of popularmovie?.results; let i =index">
+									<div *ngIf="i<6">
+										<div style="height: 400px;width: 500px;" class="card shadow-sm">
+											<div class="movie-item">
+												<div class="mv-img">
+													<img style="height: 400px;width: 500px;"
+														src="{{movie.backdrop_path}}" alt="">
+												</div>
+												<div class="hvr-inner">
+													<a (click)="getid(movie.id)"> Read more <i
+															class="ion-android-arrow-dropright"></i> </a>
+												</div>
+												<div class="title-in">
+													<h4 style="color: white;">{{movie.title}}</h4>
+													<p></p>
+													<!-- <h6 style="color: white;">Release date:<a href="#">{{movie.release_date}}</a></h6>
+													<h6 style="color: white;">Language:<a href="#">{{movie.original_language}}</a></h6> -->
+													<p style="font-size: 18px;"><i
+															class="ion-android-star"></i><span>{{movie.vote_average}}</span>
+														/ 10 &nbsp;<i class="ion-android-calendar"></i><span>
+															{{movie.release_date}}</span></p>
+
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<div id="tab2-h2" class="tab">
+						<div class="containera">
+
+							<div class="rowa row-cols-1 row-cols-sm-2 row-cols-md-3 ga-3">
+								<div style="padding-top: 20px;" class="col"
+									*ngFor="let movie of upcomingmovie?.results; let i =index">
+									<div *ngIf="i<6">
+										<div style="height: 400px;width: 500px;" class="card shadow-sm">
+											<div class="movie-item">
+												<div class="mv-img">
+													<img style="height: 400px;width: 500px;"
+														src="{{movie.backdrop_path}}" alt="">
+												</div>
+												<div class="hvr-inner">
+													<a (click)="getid(movie.id)"> Read more <i
+															class="ion-android-arrow-dropright"></i> </a>
+												</div>
+												<div class="title-in">
+													<h4 style="color: white;">{{movie.title}}</h4>
+													<p></p>
+													<!-- <h6 style="color: white;">Release date:<a href="#">{{movie.release_date}}</a></h6>
+											<h6 style="color: white;">Language:<a href="#">{{movie.original_language}}</a></h6> -->
+													<p style="font-size: 18px;"><span>
+															{{movie.release_date}}</span></p>
+
+
+												</div>
+											</div>
+										</div>
+
+										{{count+1}}
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div id="tab3-h2" class="tab">
+						<div class="containera">
+
+							<div class="rowa row-cols-1 row-cols-sm-2 row-cols-md-3 ga-3">
+								<div style="padding-top: 20px;" class="col"
+									*ngFor="let movie of topratedmovie?.results; let i =index">
+									<div *ngIf="i<6">
+										<div style="height: 400px;width: 500px;" class="card shadow-sm">
+											<div class="movie-item">
+												<div class="mv-img">
+													<img style="height: 400px;width: 500px;"
+														src="{{movie.backdrop_path}}" alt="">
+												</div>
+												<div class="hvr-inner">
+													<a (click)="getid(movie.id)"> Read more <i
+															class="ion-android-arrow-dropright"></i> </a>
+												</div>
+												<div class="title-in">
+													<h4 style="color: white;">{{movie.title}}</h4>
+													<p></p>
+													<!-- <h6 style="color: white;">Release date:<a href="#">{{movie.release_date}}</a></h6>
+											<h6 style="color: white;">Language:<a href="#">{{movie.original_language}}</a></h6> -->
+													<p style="font-size: 18px;"><i
+															class="ion-android-star"></i><span>{{movie.vote_average}}</span>
+														/ 10 &nbsp;<i class="ion-android-calendar"></i><span>
+															{{movie.release_date}}</span></p>
+
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div id="tab4-h2" class="tab">
+						<div class="containera">
+
+							<div class="rowa row-cols-1 row-cols-sm-2 row-cols-md-3 ga-3">
+								<div style="padding-top: 20px;" class="col"
+									*ngFor="let movie of trendingmovie?.results; let i =index">
+									<div *ngIf="i<6">
+										<div style="height: 400px;width: 500px;" class="card shadow-sm">
+											<div class="movie-item">
+												<div class="mv-img">
+													<img style="height: 400px;width: 500px;"
+														src="{{movie.backdrop_path}}" alt="">
+												</div>
+												<div class="hvr-inner">
+													<a (click)="getid(movie.id)"> Read more <i
+															class="ion-android-arrow-dropright"></i> </a>
+												</div>
+												<div class="title-in">
+													<h4 style="color: white;">{{movie.title}}</h4>
+													<p></p>
+													<!-- <h6 style="color: white;">Release date:<a href="#">{{movie.release_date}}</a></h6>
+											<h6 style="color: white;">Language:<a href="#">{{movie.original_language}}</a></h6> -->
+													<p style="font-size: 18px;"><i
+															class="ion-android-star"></i><span>{{movie.vote_average}}</span>
+														/ 10 &nbsp;<i class="ion-android-calendar"></i><span>
+															{{movie.release_date}}</span></p>
+
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
